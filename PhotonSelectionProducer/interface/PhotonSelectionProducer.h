@@ -50,45 +50,46 @@
 //
 
 class PhotonSelectionProducer : public edm::stream::EDProducer<> {
-   public:
-      explicit PhotonSelectionProducer(const edm::ParameterSet&);
-      ~PhotonSelectionProducer();
+    public:
+	explicit PhotonSelectionProducer(const edm::ParameterSet&);
+	~PhotonSelectionProducer();
 
-      //static void fillDescriptions(edm::ConfigurationDescriptions& descriptions);
+	//static void fillDescriptions(edm::ConfigurationDescriptions& descriptions);
 
-   private:
-      virtual void beginStream(edm::StreamID) override;
-      virtual void produce(edm::Event&, const edm::EventSetup&) override;
-      virtual void endStream() override;
-      const pat::CompositeCandidate makeZmmGammaCandidate(const pat::CompositeCandidate&, 
-const pat::Photon&);
-      //virtual void beginRun(edm::Run const&, edm::EventSetup const&) override;
-      //virtual void endRun(edm::Run const&, edm::EventSetup const&) override;
-      //virtual void beginLuminosityBlock(edm::LuminosityBlock const&, edm::EventSetup const&) override;
-      //virtual void endLuminosityBlock(edm::LuminosityBlock const&, edm::EventSetup const&) override;
+    private:
+	virtual void beginStream(edm::StreamID) override;
+	virtual void produce(edm::Event&, const edm::EventSetup&) override;
+	virtual void endStream() override;
+	const pat::CompositeCandidate makeZmmGammaCandidate(const pat::CompositeCandidate&, 
+		const pat::Photon&);
+	//const pat::Photon makeGammaCandidate(const pat::Photon&);
+	//virtual void beginRun(edm::Run const&, edm::EventSetup const&) override;
+	//virtual void endRun(edm::Run const&, edm::EventSetup const&) override;
+	//virtual void beginLuminosityBlock(edm::LuminosityBlock const&, edm::EventSetup const&) override;
+	//virtual void endLuminosityBlock(edm::LuminosityBlock const&, edm::EventSetup const&) override;
 
-      // ----------member data ---------------------------
-      edm::EDGetTokenT<std::vector<reco::CompositeCandidate> > dimuon_Label;
+	// ----------member data ---------------------------
+	edm::EDGetTokenT<std::vector<reco::CompositeCandidate> > dimuon_Label;
 
-      edm::EDGetTokenT<edm::View<pat::Photon> > photonToken_;
-//      edm::EDGetTokenT<edm::View<pat::Photon> > calibphotonCollection_;
+	edm::EDGetTokenT<edm::View<pat::Photon> > photonToken_;
+	//      edm::EDGetTokenT<edm::View<pat::Photon> > calibphotonCollection_;
 
-     edm::EDGetTokenT<EcalRecHitCollection>           ebReducedRecHitCollection_;
-     edm::EDGetTokenT<EcalRecHitCollection>           eeReducedRecHitCollection_;
-     edm::EDGetTokenT<EcalRecHitCollection>           esReducedRecHitCollection_;
-    // edm::EDGetTokenT<reco::PhotonCollection> recophotonCollection_;
-     
-    
-  //  float corrPt ;
-  //  float corrEn ;
-    double phoEt_;
-    double phoEta_;
-    double phoPhi_;
-    // use only trigger-matched J/Psi or Upsilon   
-    bool triggerMatch_;  
-    
-   int candidates;
-       
+	//edm::EDGetTokenT<EcalRecHitCollection>           ebReducedRecHitCollection_;
+	//edm::EDGetTokenT<EcalRecHitCollection>           eeReducedRecHitCollection_;
+	//edm::EDGetTokenT<EcalRecHitCollection>           esReducedRecHitCollection_;
+	// edm::EDGetTokenT<reco::PhotonCollection> recophotonCollection_;
+
+
+	//  float corrPt ;
+	//  float corrEn ;
+	//    double phoEt_;
+	//  double phoEta_;
+	//  double phoPhi_;
+	// use only trigger-matched J/Psi or Upsilon   
+	bool triggerMatch_;  
+
+	int candidates;
+
 };
 
 #endif
