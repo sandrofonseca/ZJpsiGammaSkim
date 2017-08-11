@@ -108,23 +108,23 @@ process.ZmmgDimuonFilter = cms.EDFilter('CandViewCountFilter',
 #)
 
 
-process.PatPhotons = cms.EDProducer("PhotonSelectionProducer",
+process.ZmmgDimuonGamma = cms.EDProducer("PhotonSelectionProducer",
         JPsiFiltered = cms.InputTag("ZmmgDimuons"),        
         photonSrc      = cms.InputTag("slimmedPhotons"),
-        calibphotonSrc = cms.InputTag("calibratedPatPhotons"),
-        ebReducedRecHitCollection = cms.InputTag("reducedEgamma", "reducedEBRecHits"),
-        eeReducedRecHitCollection = cms.InputTag("reducedEgamma", "reducedEERecHits"),
-        esReducedRecHitCollection = cms.InputTag("reducedEgamma", "reducedESRecHits"),
-        recoPhotonSrc = cms.InputTag("reducedEgamma", "reducedGedPhotonCores"),
+        #calibphotonSrc = cms.InputTag("calibratedPatPhotons"),
+        #ebReducedRecHitCollection = cms.InputTag("reducedEgamma", "reducedEBRecHits"),
+        #eeReducedRecHitCollection = cms.InputTag("reducedEgamma", "reducedEERecHits"),
+        #esReducedRecHitCollection = cms.InputTag("reducedEgamma", "reducedESRecHits"),
+        #recoPhotonSrc = cms.InputTag("reducedEgamma", "reducedGedPhotonCores"),
         triggerMatch = cms.bool(False) # trigger match is performed in ZmmgHLTFilter 
 
 )
-
+'''
 process.ZmmgDimuonGammaFilter = cms.EDFilter('CandViewCountFilter',
     src = cms.InputTag('PatPhotons'),
     minNumber = cms.uint32(1)
 )
-
+'''
 
 
 ### Select photon candidates with Et > 23.0 GeV
@@ -134,7 +134,7 @@ process.ZmmgDimuonGammaFilter = cms.EDFilter('CandViewCountFilter',
 #    filter = cms.bool(True)
 #)
 
-process.dimugamma_filter_step = cms.Path(process.ZmmgHLTFilter + process.ZmmgTrailingMuons + process.ZmmgLeadingMuons + process.ZmmgDimuons + process.ZmmgDimuonFilter + process.PatPhotons + process.ZmmgDimuonGammaFilter)
+process.dimugamma_filter_step = cms.Path(process.ZmmgHLTFilter + process.ZmmgTrailingMuons + process.ZmmgLeadingMuons + process.ZmmgDimuons + process.ZmmgDimuonFilter + process.ZmmgDimuonGamma)# + process.ZmmgDimuonGammaFilter)
 
 #process.dimugamma_filter_step = cms.Path(process.ZmmgTrailingMuons + process.ZmmgLeadingMuons + process.ZmmgDimuons + process.ZmmgDimuonFilter)
 
