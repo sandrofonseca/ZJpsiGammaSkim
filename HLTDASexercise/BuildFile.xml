@@ -1,0 +1,21 @@
+<use   name="boost"/>
+<use   name="DataFormats/Common"/>
+<use   name="FWCore/Framework"/>
+<use   name="FWCore/ParameterSet"/>
+<use   name="FWCore/ServiceRegistry"/>
+<use   name="FWCore/Services"/>
+<use   name="FWCore/MessageLogger"/>
+<use   name="L1Trigger/GlobalTriggerAnalyzer"/>
+<use   name="CondCore/DBOutputService"/>
+<use   name="CondFormats/HLTObjects"/>
+<use   name="CondFormats/DataRecord"/>
+<use   name="DataFormats/PatCandidates"/>
+<use   name="DataFormats/GsfTrackReco"/>
+<use   name="EgammaAnalysis/ElectronTools"/>
+<use   name="HiggsAnalysis/HiggsTo2photons"/>
+<use   name="RecoEcal/EgammaCoreTools"/>
+<use   name="RecoEgamma/PhotonIdentification"/>
+
+<export>
+  <lib   name="1"/>
+</export>

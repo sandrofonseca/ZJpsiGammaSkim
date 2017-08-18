@@ -1,0 +1,50 @@
+03-Aug-2017 09:59:39 CEST  Initiating request to open file root://eoscms.cern.ch//eos/cms/store/data/Run2017A/MuonEG/MINIAOD/PromptReco-v2/000/296/168/00000/6AEA9F47-484C-E711-BDB0-02163E0134D3.root
+03-Aug-2017 09:59:43 CEST  Successfully opened file root://eoscms.cern.ch//eos/cms/store/data/Run2017A/MuonEG/MINIAOD/PromptReco-v2/000/296/168/00000/6AEA9F47-484C-E711-BDB0-02163E0134D3.root
+03-Aug-2017 09:59:56 CEST  Closed file root://eoscms.cern.ch//eos/cms/store/data/Run2017A/MuonEG/MINIAOD/PromptReco-v2/000/296/168/00000/6AEA9F47-484C-E711-BDB0-02163E0134D3.root
+03-Aug-2017 09:59:56 CEST  Initiating request to open file root://cms-xrd-global.cern.ch//store/data/Run2017A/MuonEG/MINIAOD/PromptReco-v2/000/296/172/00000/68D87AFE-474C-E711-BC84-02163E01A4FD.root
+%MSG-w XrdAdaptor:  file_open 03-Aug-2017 09:59:59 CEST BeforeEvents
+Data is served from fnal.gov instead of original site CERN-PROD
+%MSG
+03-Aug-2017 10:00:00 CEST  Successfully opened file root://cms-xrd-global.cern.ch//store/data/Run2017A/MuonEG/MINIAOD/PromptReco-v2/000/296/172/00000/68D87AFE-474C-E711-BC84-02163E01A4FD.root
+03-Aug-2017 10:00:04 CEST  Closed file root://cms-xrd-global.cern.ch//store/data/Run2017A/MuonEG/MINIAOD/PromptReco-v2/000/296/172/00000/68D87AFE-474C-E711-BC84-02163E01A4FD.root
+03-Aug-2017 10:00:04 CEST  Initiating request to open file root://cms-xrd-global.cern.ch//store/data/Run2017A/MuonEG/MINIAOD/PromptReco-v2/000/296/173/00000/D8D695C2-6D4C-E711-ABD4-02163E01A5CC.root
+%MSG-w XrdAdaptor:  file_open 03-Aug-2017 10:00:06 CEST BeforeEvents
+Data is served from fnal.gov instead of original site CERN-PROD
+%MSG
+03-Aug-2017 10:00:07 CEST  Successfully opened file root://cms-xrd-global.cern.ch//store/data/Run2017A/MuonEG/MINIAOD/PromptReco-v2/000/296/173/00000/D8D695C2-6D4C-E711-ABD4-02163E01A5CC.root
+03-Aug-2017 10:00:12 CEST  Closed file root://cms-xrd-global.cern.ch//store/data/Run2017A/MuonEG/MINIAOD/PromptReco-v2/000/296/173/00000/D8D695C2-6D4C-E711-ABD4-02163E01A5CC.root
+03-Aug-2017 10:00:12 CEST  Initiating request to open file root://cms-xrd-global.cern.ch//store/data/Run2017A/MuonEG/MINIAOD/PromptReco-v2/000/296/173/00000/D8D695C2-6D4C-E711-ABD4-02163E01A5CC.root
+%MSG-w XrdAdaptor:  file_open 03-Aug-2017 10:00:13 CEST BeforeEvents
+Data is served from fnal.gov instead of original site CERN-PROD
+%MSG
+03-Aug-2017 10:00:14 CEST  Successfully opened file root://cms-xrd-global.cern.ch//store/data/Run2017A/MuonEG/MINIAOD/PromptReco-v2/000/296/173/00000/D8D695C2-6D4C-E711-ABD4-02163E01A5CC.root
+03-Aug-2017 10:00:19 CEST  Closed file root://cms-xrd-global.cern.ch//store/data/Run2017A/MuonEG/MINIAOD/PromptReco-v2/000/296/173/00000/D8D695C2-6D4C-E711-ABD4-02163E01A5CC.root
+03-Aug-2017 10:00:19 CEST  Initiating request to open file root://cms-xrd-global.cern.ch//store/data/Run2017A/MuonEG/MINIAOD/PromptReco-v2/000/296/174/00000/28DAC791-5F4C-E711-AF01-02163E01A707.root
+%MSG-w XrdAdaptor:  file_open 03-Aug-2017 10:00:21 CEST BeforeEvents
+Data is served from fnal.gov instead of original site CERN-PROD
+%MSG
+03-Aug-2017 10:00:22 CEST  Successfully opened file root://cms-xrd-global.cern.ch//store/data/Run2017A/MuonEG/MINIAOD/PromptReco-v2/000/296/174/00000/28DAC791-5F4C-E711-AF01-02163E01A707.root
+03-Aug-2017 10:00:27 CEST  Closed file root://cms-xrd-global.cern.ch//store/data/Run2017A/MuonEG/MINIAOD/PromptReco-v2/000/296/174/00000/28DAC791-5F4C-E711-AF01-02163E01A707.root
+
+=============================================
+
+MessageLogger Summary
+
+ type     category        sev    module        subroutine        count    total
+ ---- -------------------- -- ---------------- ----------------  -----    -----
+    1 XrdAdaptor           -w file_open                              4        4
+    2 fileAction           -s file_close                             5        5
+    3 fileAction           -s file_open                             10       10
+
+ type    category    Examples: run/evt        run/evt          run/evt
+ ---- -------------------- ---------------- ---------------- ----------------
+    1 XrdAdaptor           BeforeEvents     BeforeEvents     BeforeEvents
+    2 fileAction           BeforeEvents     BeforeEvents     BeforeEvents
+    3 fileAction           pre-events       pre-events       BeforeEvents
+
+Severity    # Occurrences   Total Occurrences
+--------    -------------   -----------------
+Warning                 4                   4
+System                 15                  15
+
+dropped waiting message count 0

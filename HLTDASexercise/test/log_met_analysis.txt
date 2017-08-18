@@ -1,0 +1,31 @@
+# Conditions read from  CMS_CONDITIONS  via FrontierProd 
+27-Jul-2017 11:29:27 CEST  Initiating request to open file root://cmseos.fnal.gov//store/user/cmsdas/2017/short_exercises/Trigger/skim_pfmet100_SingleElectron_2016G_ReReco_87k.root
+27-Jul-2017 11:29:33 CEST  Successfully opened file root://cmseos.fnal.gov//store/user/cmsdas/2017/short_exercises/Trigger/skim_pfmet100_SingleElectron_2016G_ReReco_87k.root
+Begin processing the 1st record. Run 278820, Event 21443156, LumiSection 18 at 27-Jul-2017 11:30:16.410 CEST
+Begin processing the 10001st record. Run 278820, Event 752020517, LumiSection 420 at 27-Jul-2017 11:30:28.928 CEST
+Begin processing the 20001st record. Run 278820, Event 1237283702, LumiSection 677 at 27-Jul-2017 11:30:38.621 CEST
+Begin processing the 30001st record. Run 279116, Event 304428562, LumiSection 178 at 27-Jul-2017 11:30:57.977 CEST
+Begin processing the 40001st record. Run 279760, Event 1218990308, LumiSection 721 at 27-Jul-2017 11:31:34.494 CEST
+Begin processing the 50001st record. Run 280364, Event 2295970838, LumiSection 1355 at 27-Jul-2017 11:32:15.240 CEST
+Begin processing the 60001st record. Run 278822, Event 887621155, LumiSection 511 at 27-Jul-2017 11:32:46.985 CEST
+Begin processing the 70001st record. Run 279694, Event 624294026, LumiSection 342 at 27-Jul-2017 11:33:19.998 CEST
+Begin processing the 80001st record. Run 279841, Event 2038449070, LumiSection 1183 at 27-Jul-2017 11:34:01.045 CEST
+27-Jul-2017 11:34:45 CEST  Closed file root://cmseos.fnal.gov//store/user/cmsdas/2017/short_exercises/Trigger/skim_pfmet100_SingleElectron_2016G_ReReco_87k.root
+
+=============================================
+
+MessageLogger Summary
+
+ type     category        sev    module        subroutine        count    total
+ ---- -------------------- -- ---------------- ----------------  -----    -----
+    1 fileAction           -s file_close                             1        1
+    2 fileAction           -s file_open                              2        2
+
+ type    category    Examples: run/evt        run/evt          run/evt
+ ---- -------------------- ---------------- ---------------- ----------------
+    1 fileAction           PostEndRun                        
+    2 fileAction           pre-events       pre-events       
+
+Severity    # Occurrences   Total Occurrences
+--------    -------------   -----------------
+System                  3                   3
