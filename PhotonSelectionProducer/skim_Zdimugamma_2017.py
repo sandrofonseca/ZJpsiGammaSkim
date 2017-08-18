@@ -13,7 +13,7 @@ process.load('Configuration.StandardSequences.EndOfProcess_cff')
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_condDBv2_cff")
 
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(1000)
+    input = cms.untracked.int32(10000)
 )
 """
 process.RandomNumberGeneratorService = cms.Service("RandomNumberGeneratorService",
@@ -24,6 +24,9 @@ process.RandomNumberGeneratorService = cms.Service("RandomNumberGeneratorService
 """
 # Input source
 process.source = cms.Source("PoolSource",
+   #fileNames = cms.untracked.vstring('root://cms-xrd-global.cern.ch//store/data/Run2017B/MuonEG/AOD/PromptReco-v1/000/297/050/00000/C4E22BE2-4756-E711-9E3F-02163E0134C1.root'),
+   #fileNames = cms.untracked.vstring('root://cms-xrd-global.cern.ch//store/data/Run2017B/MuonEG/MINIAOD/PromptReco-v2/000/298/853/00000/50DD4B49-C368-E711-9F5A-02163E01A3DB.root'),
+
    fileNames = cms.untracked.vstring(
      #  'file:446CB6BD-6A55-E711-89DF-02163E011A9C.root'
         '/store/data/Run2017B/MuonEG/MINIAOD/PromptReco-v1/000/297/101/00000/F6C53CDD-2557-E711-8F55-02163E01A6D8.root'
@@ -60,7 +63,7 @@ process.source.lumisToProcess = LumiList.LumiList(filename = '/afs/cern.ch/cms/C
 import copy
 from HLTrigger.HLTfilters.hltHighLevel_cfi import *
 process.ZmmgHLTFilter = copy.deepcopy(hltHighLevel)
-process.ZmmgHLTFilter.throw = cms.bool(False)
+process.ZmmgHLTFilter.throw = cms.bool(True)
 process.ZmmgHLTFilter.HLTPaths = ['HLT_DoubleMu20_7_Mass0to30_Photon23_v*']
 
 
@@ -86,7 +89,8 @@ process.ZmmgLeadingMuons = cms.EDFilter('MuonSelector',
 process.ZmmgDimuons = cms.EDProducer('CandViewShallowCloneCombiner',
     decay = cms.string('ZmmgLeadingMuons@+ ZmmgTrailingMuons@-'),
     checkCharge = cms.bool(True),
-    cut = cms.string('mass > 3.0 && mass < 3.2')
+    #cut = cms.string('mass > 3.0 && mass < 3.2')
+    cut = cms.string('mass > 0.0 && mass < 300.0')
     )
 
 ### Require at least one dimuon candidate
@@ -139,11 +143,13 @@ process.dimugamma_filter_step = cms.Path(process.ZmmgHLTFilter + process.ZmmgTra
 #process.dimugamma_filter_step = cms.Path(process.ZmmgTrailingMuons + process.ZmmgLeadingMuons + process.ZmmgDimuons + process.ZmmgDimuonFilter)
 
 
+#process.dimugamma_filter_step = cms.Path(process.ZmmgTrailingMuons + process.ZmmgLeadingMuons + process.ZmmgDimuons + process.ZmmgDimuonFilter + process.ZmmgDimuonGamma)# + process.ZmmgDimuonGammaFilter)
+
 # Output definition
 
 process.Out = cms.OutputModule("PoolOutputModule",
-                               fileName = cms.untracked.string ("dimugamma_skim.root"),
-                               outputCommands = cms.untracked.vstring('keep *'),
+                               fileName = cms.untracked.string ("dimugamma_skim10k.root"),
+                               outputCommands = cms.untracked.vstring('keep *', 'keep patTriggerObjectStandAlones_patTrigger_*_*'),
                                SelectEvents = cms.untracked.PSet(
                                    SelectEvents = cms.vstring('dimugamma_filter_step')
                                ),
@@ -156,4 +162,4 @@ process.GlobalTag.globaltag = "92X_dataRun2_Prompt_v8" # ??????
 process.output_step = cms.EndPath(process.Out)
 
 process.load('FWCore.MessageService.MessageLogger_cfi')
-process.MessageLogger.cerr.FwkReport.reportEvery = 100
+process.MessageLogger.cerr.FwkReport.reportEvery = 3000
